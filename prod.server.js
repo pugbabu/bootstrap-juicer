@@ -7,26 +7,57 @@ var app = express();
 var router = express.Router();
 
 
-router.get('/', function (req, res, next) {
-	console.log('进来了')
-	req.url = './index.html';
-	next();
-});
+
 
 app.use(router);
 
 var appData = require('./data.json');
 
-var apiRoutes = express.Router();
-
-apiRoutes.get('/title', function (req, res) {
-
-	res.json({
-		data: appData
-	});
+router.get('/', function (req, res, next) {
+    console.log('进来了')
+    // req.url = './pages/login.htm';
+    next();
 });
 
-app.use('/api', apiRoutes);
+router.get('/title', function (req, res) {  // 返回显示数据get
+	setTimeout(() => {
+        res.json({
+            data: appData
+        });
+	},1000)
+});
+
+router.get('/login', function (req, res) {  // 登陆post
+
+    console.log(req.query)
+	if((req.query.pwd === 'admin') && (req.query.username === 'admin') ){
+        setTimeout(() => {
+            res.json({
+                token: true,
+                result: 'SUCCESS',
+                resultMessage: ''
+            })
+        },1000)
+	}else{
+        setTimeout(() => {
+            res.json({
+                token: false,
+                resultMessage: '用户名或者密码错误'
+            })
+        },1000)
+	}
+});
+
+
+router.get('/logout', function (req, res) {  // 返回显示数据get
+    setTimeout(() => {
+        res.json({
+            result: 'SUCCESS'
+        });
+    },1000)
+});
+
+app.use('/api', router);
 
 app.use(express.static('./web'));
 

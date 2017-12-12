@@ -62,7 +62,7 @@
             params.random = random;
         }
         return $.ajax({
-            url: properties.rootPath + properties.ajaxPath + url,
+            url: "http://127.0.0.1" + url,
             data: (params && JSON.stringify(params)),
             processData: false,
             type: "POST",
@@ -89,7 +89,8 @@
     };
 
     $.get = function (url, params, success, withoutToken) {
-        $('body').loading().open();
+
+        $('body').loading().open();  // 开始动画
         var random = Math.random();
         var properties = $.properties;
         if (typeof params === "function") {
@@ -104,7 +105,7 @@
             data: params,
             type: "GET",
             success: function (data) {
-                $('body').loading().close();
+                $('body').loading().close();  // 结束动画
                 if (data.result === 'INVALID_TOKEN' || data.result === "INVALID_USER_TOKEN") {
                     if (self != top) {
                         window.top.location.href = properties.rootPath + properties.pagePath + 'login.htm';
@@ -119,6 +120,7 @@
                 }
             },error:function () {
                 $('body').loading().close();
+                // window.top.location.href = properties.rootPath + properties.pagePath + 'login.htm';
             }
         });
     };

@@ -17,10 +17,11 @@
                 if(callbackUrl) {
                     params.callbackUrl = callbackUrl;
                 }
-                $.post('../services/userResource/userLogin', params, function (data) {
-
+                $.get('/api/login', params, function (data) {
+                    //
                     if (data.result === 'SUCCESS') {
-                        var token = data.content.token;
+                        location.href = "frame.htm"
+                        // var token = data.content.token;
 
                         //var expires = new Date();
                         //expires.setTime(expires.getTime()+token.expire*1000);
@@ -28,24 +29,24 @@
                         $.cookie('token', token, {expires: 10000});
                         $.cookie('userName', data.content.userName, {expires: 10000});
                         $.cookie('userAlias', data.content.userAlias, {expires: 10000});
-                        if (callbackUrl) {
-                            var ticket = data.content.ticket;
-                            var url;
-                            if (self != top) {
-                                url = callbackUrl;
-                            } else {
-                                url = 'frame.htm?callbackUrl=' + callbackUrl;
-                            }
-                            if (callbackUrl.indexOf("?") > 0) {
-                                location.href = url  + "&ticket=" + ticket;
-                            }
-                            else {
-                                location.href = url  + "?ticket=" + ticket;
-                            }
-                        }
-                        else {
-                            location.href = "frame.htm"
-                        }
+                        // if (callbackUrl) {
+                        //     var ticket = data.content.ticket;
+                        //     var url;
+                        //     if (self != top) {
+                        //         url = callbackUrl;
+                        //     } else {
+                        //         url = 'frame.htm?callbackUrl=' + callbackUrl;
+                        //     }
+                        //     if (callbackUrl.indexOf("?") > 0) {
+                        //         location.href = url  + "&ticket=" + ticket;
+                        //     }
+                        //     else {
+                        //         location.href = url  + "?ticket=" + ticket;
+                        //     }
+                        // }
+                        // else {
+                        //     location.href = "./pages/frame.htm"
+                        // }
                     } else {
                         $('#alertMsg').addClass('in').removeClass('hidden').children('span').html(data.resultMessage);
                     }

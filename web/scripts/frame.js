@@ -1,6 +1,4 @@
 (function () {
-
-
     var idIndex = 1;
     var $tabList;
 
@@ -547,76 +545,11 @@
     });
 })();
 
-
-$(function () {
-    $.get('../services/web/deviceResource/getDeviceWarnNum', function (data) {
-        if (data.result === 'SUCCESS') {
-            var allNum = data.content;
-            $("#userInfo").juicer({
-                allNum:allNum,
-                deviceWarning:data.content
-            })
-        }
-    });
-
-    $.get('../services/userResource/getUserInfo', function (data) {
-        if (data.result === 'SUCCESS') {
-            $("#phoneNumber").val(data.content.mobilePhone);
-            $("#email").val(data.content.email);
-        }
-    });
-    $("#personalInfoForm").validate({
-        rules: {
-            phoneNumber: {
-                required: true,
-                phoneNumber: true
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            companyName: {
-                required: true,
-                chinese: true
-            }
-        },
-        submitHandler: function () {
-            var imgBase64 = "base64";
-            changePersonalInfo(imgBase64);
-        }
-    });
-    $("#changePasswordForm").validate({
-        rules: {
-            oldPassword: {
-                required: true
-            },
-            newPassword: {
-                required: true
-            },
-            newPasswordAgain: {
-                required: true,
-                equalTo: '#newPassword'
-            }
-        },
-        submitHandler: function () {
-            changePassword();
-        }
-    });
-    var email_ = unescape($.cookie("email"));
-    var userAlias_ = unescape($.cookie('userAlias'));
-    var phoneNumber_ = unescape($.cookie('mobilePhone'));
-    $("#companyName").val(userAlias_);
-    $("#phoneNumber").val(phoneNumber_);
-    $("#email").val(email_);
-});
-
 function logout() {
-    $.post('../services/userResource/userLogout', function (data) {
+    $.get('/api/logout', function (data) {
         if (data.result === 'SUCCESS') {
-            $.cookie('token', "");
-            setTimeout(function () {
-                location.href = "login.htm";
-            },500);
+            // $.cookie('token', "");
+            location.href = "login.htm";
         }
     });
 }

@@ -16,24 +16,6 @@
                 "purviewUrl": "home/index.htm",
                 "parentId": "ff808081591a6f0501591a710581",
                 "purviewId": "ff808081591a6f0501591a71998103"
-            },
-            {
-                "purviewName": "路段信息管理",
-                "purviewOrder": 1,
-                "purviewType": "FUNCTION",
-                "isMenu": true,
-                "purviewUrl": "park/berthGroup/berthGroupList.htm",
-                "parentId": "ff808081591a6f0501591a7105880001",
-                "purviewId": "ff8080815926341401592635dac60001"
-            },
-            {
-                "purviewName": "泊位管理",
-                "purviewOrder": 2,
-                "purviewType": "FUNCTION",
-                "isMenu": true,
-                "purviewUrl": "park/berth/berthList.htm",
-                "parentId": "ff808081591a6f0501591a7105880001",
-                "purviewId": "ff808081591f447501591f4648af0000"
             }
         ]
     },
