@@ -100,26 +100,26 @@
         return result;
     }
 
-    function caculateTabWidth(check) {
-        if (check === true) {
-            var cw = $("#tabList").width();
-            var aw = (tabList.length) * 160 - (tabList.length - 1) * 15;
-            if (aw > cw) {
-                var elw = parseInt((cw + (tabList.length - 1) * 15) / tabList.length);
-                if (elw - 46 < 38) {
-                    alert('当前页面数量已达最大，无法打开新页面');
-                    return false;
-                }
-            }
-        } else {
-            var cw = $("#tabList").width();
-            var aw = (tabList.length) * 160 - (tabList.length - 1) * 15;
-            if (aw > cw) {
-                var elw = parseInt((cw + (tabList.length - 1) * 15) / tabList.length);
-                $("#tabList>li").width(elw);
-                $("#tabList>li>a").width(elw - 46);
-            }
-        }
+    function caculateTabWidth(check) { // 检查tab宽度
+        // if (check === true) {
+        //     var cw = $("#tabList").width();
+        //     var aw = (tabList.length) * 160 - (tabList.length - 1) * 15;
+        //     if (aw > cw) {
+        //         var elw = parseInt((cw + (tabList.length - 1) * 15) / tabList.length);
+        //         if (elw - 46 < 38) {
+        //             // alert('当前页面数量已达最大，无法打开新页面');
+        //             return false;
+        //         }
+        //     }
+        // } else {
+        //     var cw = $("#tabList").width();
+        //     var aw = (tabList.length) * 160 - (tabList.length - 1) * 15;
+        //     if (aw > cw) {
+        //         var elw = parseInt((cw + (tabList.length - 1) * 15) / tabList.length);
+        //         $("#tabList>li").width(elw);
+        //         $("#tabList>li>a").width(elw - 46);
+        //     }
+        // }
         return true;
     }
 

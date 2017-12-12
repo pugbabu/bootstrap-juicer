@@ -543,8 +543,9 @@ html, body {
 }
 
 .left-nav-list .plus {
-    display: inline-block;
+    /*display: inline-block;*/
     float: right;
+    display: none;
     width: 12px;
     height: 12px;
     background-image: url("../images/newimages/add@2x.png");
