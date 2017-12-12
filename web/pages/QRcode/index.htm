@@ -1,0 +1,59 @@
+<script src="../../scripts/QRcode/jquery.qrcode.min.js"></script>
+<style>
+    #code{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:translateX(-50%) translateY(-50%);
+        z-index: 10;
+    }
+    .model{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right:0;
+        background: rgba(99,99,99,.6);
+        z-index: 2;
+    }
+</style>
+<div id="dd">
+    <div id="code"></div>
+    <div class="model"></div>
+</div>
+<script>
+    $('.model').click(() => {$('#dd').fadeOut()})
+    var url = $.cookie('url')
+    console.log(url)
+    outputQRCod(url, 200, 200);
+
+    function outputQRCod(txt, width, height) {
+        $("#code").empty();
+        var str = toUtf8(txt);
+        $("#code").qrcode({
+            render: "table",
+            width: width,
+            height: height,
+            text: str
+        });
+    }
+    function toUtf8(str) {
+        var out, i, len, c;
+        out = "";
+        len = str.length;
+        for (i = 0; i < len; i++) {
+            c = str.charCodeAt(i);
+            if ((c >= 0x0001) && (c <= 0x007F)) {
+                out += str.charAt(i);
+            } else if (c > 0x07FF) {
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            } else {
+                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            }
+        }
+        return out;
+    }
+</script>

@@ -6,9 +6,6 @@ var app = express();
 
 var router = express.Router();
 
-
-
-
 app.use(router);
 
 var appData = require('./data.json');
