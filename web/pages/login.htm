@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/common/loading.css">
+    <script src="../scripts/lib/jquery-2.2.2.min.js"></script>
+    <script src="../scripts/lib/jquery.validate.js"></script>
+    <script src="../scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="../scripts/lib/moment.min.js"></script>
+    <script src="../scripts/bootstrap/plugin/bootbox.min.js"></script>
+    <script src="../scripts/common/jquery.cookie.min.js"></script>
+    <script src="../scripts/common/jquery.serializeObject.min.js"></script>
+    <script src="../scripts/common/properties.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/lib/juicer-min.js"></script>
+</head>
+<body>
+<div class="header-container">
+    <div class="header"></div>
+    <img src="../images/oa_2.png" class="header-img" alt="">
+    <p class="title">北京市路侧停车动态监测和电子收费管理系统</p>
+</div>
+
+<form id="login" name="login" class="form">
+    <fieldset class="fieldset">
+        <div class="alert alert-danger fade in hidden form_title_container" role="alert" id="alertMsg">
+                <span aria-hidden="true" class="warning_content"></span>
+                <p class="close" aria-label="Close">
+                </p>
+            <p class="form_title">登录</p>
+        </div>
+        <div class="input_container">
+            <img src="../images/index/loginUser.png" alt="" class="input_img">
+            <!-- <label class="control-label" for="username">用户名</label>-->
+            <input type="text" class="form-control" id="username" placeholder="用户名" name="username">
+        </div>
+        <div class="input_container input_container_2">
+            <img src="../images/index/pwUser.png" alt="" class="input_img">
+            <!-- <label class="control-label" for="pwd">密码</label>-->
+            <input type="password" class="form-control" id="pwd" placeholder="密码" name="pwd" autocomplete="off">
+        </div>
+        <br>
+        <div class="form-actions">
+            <button class="btn" type="submit">登录
+            </button>
+        </div>
+    </fieldset>
+</form>
+<script src="../scripts/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.sort-table thead > tr > th[sort] {
+    cursor: pointer;
+    position: relative;
+}
+
+.sort-table thead > tr > th[sort='']:after {
+    content:url("../../images/arrow.png");
+    width:16px;
+    height:16px;
+    position: relative;
+    top: 3px;
+}
+.sort-table thead > tr > th[sort='ASC']:after {
+    position: relative;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #FFF;
+    content: " ";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+.sort-table thead > tr > th[sort='DESC']:after {
+    position: relative;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #FFF;
+    content: " ";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-top: 8px;
+    margin-left: 3px;
+}

@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    font-family: "SimHei" ;
+    height:100%;
+}
+body{
+    background: url("../images/index/login-bg3.jpg");
+    background-size:cover;
+}
+.header-container{
+    height:60px;
+    position: relative;
+    line-height: 60px;
+
+}
+.header{
+    height:60px;
+    width: 100%;
+    background: #FFF;
+    opacity: 0.1;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+}
+.header-container>p.title{
+    margin-left: 110px;
+    color: #FFF;
+    font-size: 18px;
+}
+.header-img{
+    position: absolute;
+    top:0;
+    margin:7px 40px 7px 0;
+    width: 46px;
+    height:46px;
+    padding-left: 50px;
+    font-family: "Microsoft YaHei";
+    display: inline-block;
+}
+.form{
+    top:150px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    position: absolute;
+    right: 155px;
+    padding: 20px 25px 20px;
+}
+.form-control{
+    outline: none;
+    font-size: 16px;
+    padding-left: 8px;
+    width: 220px;
+    height:38px;
+    border:none;
+    margin-left: 40px;
+    color: #778086;
+    background: #FFF;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    border:none;
+}
+.fieldset{
+    border:none;
+}
+.form_title{
+    padding: 30px 0 18px 0;
+    color: #1d2b36;
+    font-weight: normal;
+    font-size: 25px;
+    text-align: center;
+}
+.input_container{
+    width: 273px;
+    line-height: 40px;
+    height: 40px;
+    border: 1px solid #778086;
+    border-radius: 7px;
+    background: #fff;
+    position: relative;
+    margin-top: 20px;
+}
+
+.input_img{
+    position: absolute;
+    top:8px;
+    border-right: 1px solid #778086;
+    padding: 0 9px 0 9px;
+}
+.form_title_container{
+    position: relative;
+}
+.warning_content{
+    color: red;
+    position: absolute;
+    top:10px;
+    left:80px;
+    font-size: 14px;
+}
+.close{
+    display: inline-block;
+    width: 20px;
+    height:20px;
+    background: url("../images/index/close.png");
+    position: absolute;
+    top:0;
+    right:0;
+    cursor: pointer;
+}
+.save_pwd_container{
+    margin-top: 10px;
+    color: #778086;
+    font-size: 14px;
+}
+.btn{
+    margin-top: 10px;
+    width: 270px;
+    height: 45px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    background: #3b415c;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 7px;
+}
+.btn:hover{
+    background: #1f2542;
+}
+.modal{
+   position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
+    z-index: 1000;
+    background:rgba(0,0,0,0.6);
+}
+.modal-dialog{
+    border-radius: 4px;
+    overflow: hidden;
+    background: #FFF;
+    width: 300px;
+    margin:0 auto;
+    margin-top: 100px;
+}
+.container{
+    padding: 50px 30px;
+}
+.help-block{
+    position: absolute;
+    top:-30px;
+    left:10px;
+    color: #B80707;
+    font-size: 14px;
+}
+.drop-down{
+    text-decoration: none;
+}

@@ -1,0 +1,262 @@
+@import "common/famIcons";
+
+$leftNavWidth: 240px;
+$leftNavActiveColor: rgb(8, 142, 200);
+$tabListHeight: 30px;
+$tabItemHeight: 24px;
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.hidden {
+  display: none !important;
+}
+
+body, html, iframe, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+html, body {
+  height: 100%;
+  font-family: 黑体,"Hiragino Sans GB";
+}
+
+.left-nav {
+  display: block;
+  width: $leftNavWidth;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #E2E2E2;
+  background: #ffffff;
+  z-index: 1;
+
+  .nav-toggle>span:before{
+    content: "\e106";
+  }
+
+  &.collapse{
+    left: -$leftNavWidth + 10px;
+    transition: transform 300ms;
+
+    .nav-toggle>span:before {
+      content: "\e105";
+    }
+
+    +.contents{
+      left: 20px;
+    }
+  }
+
+
+  &.collapse.opened{
+    transform: translate($leftNavWidth - 10px,0);
+  }
+}
+
+.left-nav-header {
+  background-color: rgb(217, 217, 217);
+  margin: 40px 0 20px;
+  padding: 20px 13px;
+
+  > img {
+    width: 50px;
+    height: 50px;
+    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(153, 153, 153);
+    float: left;
+  }
+
+  > .user-info {
+    margin-left: 75px;
+
+    > .user-name {
+      color: rgb(97, 100, 102);
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: none;
+      font-family: 'PT Sans', Arial, sans-serif;
+    }
+  }
+
+  .settings {
+    list-style: none;
+    margin-top: 8px;
+
+    > li {
+      float: left;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      font-size: 17px;
+      color: rgb(8, 142, 200);
+    }
+  }
+}
+
+.contents {
+  position: absolute;
+  left: $leftNavWidth + 10px;
+  right: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+
+  > .tab-content {
+    position: absolute;
+    top: $tabListHeight + 2px;
+    bottom: 0;
+    width: 100%;
+
+    > .tab-container {
+      display: none;
+      height: 100%;
+
+      &.opened {
+        display: block;
+      }
+    }
+  }
+}
+
+.tab-list {
+  background-color: rgb(204, 204, 204);
+  display: block;
+  list-style: none;
+  height: $tabListHeight;
+  border-bottom: 1px solid rgb(170, 170, 170);
+
+  > li {
+    float: left;
+
+    > a {
+      background-color: #e6e6e6;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      padding-left: 5px;
+      font-size: 13px;
+      line-height: $tabItemHeight;
+      color: #555555;
+      border: 1px solid rgb(211, 211, 211);
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      margin-left: 3px;
+      margin-top: $tabListHeight - $tabItemHeight - 1px;
+
+      &.active {
+        color: #212121;
+        background: #ffffff;
+        border: 1px solid rgb(170, 170, 170);
+        border-bottom: none;
+        height: $tabItemHeight + 1px;
+        cursor: text;
+      }
+    }
+
+    .close {
+      display: inline-block;
+      line-height: $tabItemHeight;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 20px;
+      margin-left: 5px;
+      text-align: center;
+    }
+  }
+}
+
+.left-nav-list {
+  border-top: 1px solid #d1d1d1;
+  border-bottom: 1px solid #f2f0f0;
+  margin: 10px 0;
+  display: block;
+  list-style: none;
+
+  a {
+    color: #616466;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: block;
+
+    &.active, &:hover {
+      color: $leftNavActiveColor;
+    }
+  }
+
+  > li {
+    padding: 0 20px;
+    border-top: 1px solid #f2f0f0;
+    border-bottom: 1px solid #d1d1d1;
+
+    > a {
+      font-size: 16px;
+      line-height: 32px;
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    display: none;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    list-style: disc;
+    font-size: 12px;
+    color: $leftNavActiveColor;
+
+    > li > a {
+      line-height: 22px;
+      color: rgb(128, 128, 128);
+    }
+
+    .plus {
+      margin-top: 2px;
+      font-family: Arial;
+    }
+  }
+
+  a.opened + ul {
+    display: list-item;
+  }
+
+  .plus {
+    float: right;
+    font-weight: bold;
+    background: #BDBDBD;
+    width: 18px;
+    line-height: 20px;
+    height: 18px;
+    text-align: center;
+    margin-left: 10px;
+    color: white;
+    border-radius: 2px;
+    margin-top: 7px;
+
+    &:hover {
+      background: $leftNavActiveColor;
+    }
+  }
+
+  .fam-icon{
+    margin-right: 10px;
+  }
+}

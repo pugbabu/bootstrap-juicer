@@ -1,0 +1,200 @@
+a.underline {
+    text-decoration: underline;
+  }
+
+.ellipsis{
+	overflow:hidden !important;
+	white-space: nowrap !important;
+	text-overflow: ellipsis !important;
+	display:block !important;
+}
+
+/****************鍚戝乏娴姩甯冨眬*************************/
+.float-box {
+	background: none;
+	padding: 0;
+	border: 1px solid #1a1819;
+	border-left:0px;
+	-webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+	-moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin: 10px 0 10px 0;
+	overflow:hidden;
+}
+
+.column {
+	overflow: hidden;
+	display: block;
+	white-space:nowrap;
+	float:left;
+}
+
+.border{
+	width:3000px;
+	height:20px;
+/* 	background:red; */
+	position:absolute;
+	border-left: 1px solid rgba(255, 255, 255, 0.12);
+	border-bottom: 1px solid #1a1819;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+input[type=radio].radio + label.radio.inline{
+    padding-left: 0;
+    margin-left: 7px;
+}
+
+input[type=checkbox].checkbox.inline + label{
+    display: inline-block;
+    padding-left: 0;
+    margin:0px 8px 0 4px;
+}
+/*************** ********************************************/
+.qqFace {
+	background: #fff;
+	padding: 8px;
+	border: 1px #dfe6f6 solid;
+}
+
+.qqFace table td {
+	padding: 2px;
+}
+
+.qqFace table td span {
+	cursor: pointer;
+	border: 1px #fff solid;
+}
+
+.qqFace table td span:hover {
+	border: 1px #0066cc solid;
+}
+
+.smalltexts {
+	margin: 0px;
+	width: 150px;
+	left: 0px;
+	position: absolute;
+}
+
+.largetexts {
+	width: 300px;
+	height: 16em;
+	left: 0px;
+	margin: 0px;
+	position: absolute;
+}
+
+span.bulb:hover {
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.table-highlight {
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	background: #fff;
+	display: block;
+	position: absolute;
+	z-index: 10000;
+	padding: 7px;
+}
+
+.tableTdLeft td {text-align: left}
+
+.picture {
+    display: none;
+    position: absolute;
+    right: -100px;
+    top:50%;
+    margin-top: -50px;
+    width: 100px;
+    background-color: #eee;
+
+}
+
+.picture > img{
+    width: 99px;
+    height: 99px;
+    border:1px solid #888888;
+}
+.picTd{
+    position: relative;
+}
+
+.picTd>span:hover + .picture{
+    display: block;
+}
+
+/**************************************  table   *********************************************************/
+.yes{
+    font-size: 1.2em;
+    color: rgb(0,153,51);
+}
+
+.no{
+    font-size: 1.2em;
+    color: rgb(204,0,0);
+}
+
+table td.text-center,table.table-center td{
+    text-align: center;
+}
+
+table td.text-center .btn-group,table.table-center .btn-group {
+    float: none;
+    display: inline-block;
+}
+
+table th{
+    white-space: nowrap;
+}
+
+.links >span{
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	background-position: 999px 999px;
+	background-repeat: no-repeat;
+	background-image: url("../../img/shop/icons.png");
+}
+
+.links >.comment{
+	width: 34px;
+	height: 34px;
+	background-position: -29px 2px;
+}
+
+.links >.smile{
+	width: 34px;
+	height: 34px;
+	background-position: -69px 2px;
+}
+
+.links >.tag{
+	width: 34px;
+	height: 34px;
+	background-position: -109px 0px;
+}
+
+.links >.question{
+	width: 34px;
+	height: 34px;
+	background-position: -153px 2px;
+}
+
+.links >.service{
+	width: 34px;
+	height: 34px;
+	background-position: -193px 2px;
+}
+
+.controls label{
+    line-height: 28px;
+}
+

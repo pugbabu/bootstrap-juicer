@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="shortcut icon" href="../../logo_icon.png"/>
+    <link rel="stylesheet" href="../styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../styles/frame.css">
+    <link rel="stylesheet" href="../styles/common/loading.css">
+    <script src="../scripts/lib/jquery-2.2.2.min.js"></script>
+    <script src="../scripts/validate/jquery.validate.js"></script>
+    <script src="../scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="../scripts/lib/moment.min.js"></script>
+    <script src="../scripts/bootstrap/plugin/bootbox.min.js"></script>
+    <script src="../scripts/common/jquery.cookie.min.js"></script>
+    <script src="../scripts/common/jquery.serializeObject.min.js"></script>
+    <script src="../scripts/common/properties.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/lib/juicer-min.js"></script>
+    <script src="../scripts/frame.js"></script>
+</head>
+<body>
+<script>
+
+</script>
+<div id="dat"></div>
+<div class="left-nav">
+    <div class="left-nav-header">
+        <img src="../images/newimages/logo@3x.png" alt="">
+    </div>
+    <ul class="left-nav-list" id="leftNavList">
+    </ul>
+</div>
+<div class="contents">
+    <div class="header">
+        <p class="header-title">后台管理系统</p>
+        <div id="warningContainer" class="dropdown" style="height:100%;">
+            <span class="warnNum">2</span>
+            <img id="unusualMessage" class="dropdown-toggle" src="../images/newimages/warning.png"  data-toggle="dropdown">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="unusualMessage">
+                <li role="presentation">
+                    <a role="menuitem" class="open-new-tab" data-gotarget="map/index.htm" tabindex="-1" href="#">
+                        <span class="badge pull-right" juicer="deviceWarning"></span>
+                        报警设备
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" class="open-new-tab" data-gotarget="order/order/suspiciousOrderAllList.htm" tabindex="-1" href="#">
+                        <span class="badge pull-right"></span>
+                        异常订单
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="userInfo" class="user-info-container">
+            <!--<div class="user-name-container">-->
+                <!--<a class="user-name" href="#" id="userAlias"></a>-->
+            <!--</div>-->
+            <!--<a href="#" class="all-message" juicer="allNum">0</a>-->
+            <div class="moddle"></div>
+            <ul class="settings clearfix" id="settings" style="display: none">
+                <i></i>
+                <li id="goHome">
+                    <img src="../images/newimages/shouye@2x.png" alt="首页" title="首页" >
+                    <span>首页</span>
+                </li>
+                <li data-target="#personalInfo" data-toggle="modal">
+                    <img src="../images/newimages/gerenzhongxoin@2x.png"
+                         alt="个人信息设置" title="个人信息设置" >
+                    <span>信息设置</span>
+                </li>
+                <li data-target="#changePassword" data-toggle="modal">
+                    <img src="../images/newimages/xiugaimima@2x.png"
+                         alt="密码修改" title="密码修改" >
+                    <span>密码修改</span>
+                </li>
+                <li class="nav-toggle">
+                    <img id="toggle" src="../images/newimages/kejian@2x.png" alt="">
+                    <span>侧边栏</span>
+                </li>
+                <li onclick="logout()">
+                    <img target="_top"  src="../images/newimages/tuichu@2x.png" alt="注销" title="注销" >
+                    <span>注销</span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="tab-list-container">
+        <ul class="tab-list clearfix" id="tabList"></ul>
+    </div>
+    <div class="tab-content" id="tabContent">
+    </div>
+</div>
+<!--个人信息设置-->
+<div class="modal fade" id="personalInfo" tabindex="-1" role="dialog" aria-labelledby="personalInfoTitle"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="personalInfoTitle">
+                    个人信息设置
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="personalInfoForm" role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="companyName" class="control-label col-sm-4">用户名：</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="companyName" class="form-control" name="companyName"
+                                   autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber" class="control-label col-sm-4">手机号：</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control"
+                                   autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="control-label col-sm-4">用户邮箱：</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="email" name="email" class="form-control" autocomplete="off">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" data-dismiss="modal">取消
+                </button>
+                <button type="button" class="btn-inter" onclick="$('#personalInfoForm').submit();">
+                    保存
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改密码-->
+<div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="passwordTitle"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="passwordTitle">
+                    修改密码
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form action="" id="changePasswordForm" role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="oldPassword" class="control-label col-sm-4">请输入旧密码：</label>
+                        <div class="col-sm-7">
+                            <input type="password" id="oldPassword" name="oldPassword" class="form-control"
+                                   autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword" class="control-label col-sm-4">请输入新密码：</label>
+                        <div class="col-sm-7">
+                            <input type="password" id="newPassword" name="newPassword" class="form-control"
+                                   autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPasswordAgain" class="control-label col-sm-4">请再次输入新密码：</label>
+                        <div class="col-sm-7">
+                            <input type="password" id="newPasswordAgain" name="newPasswordAgain" class="form-control"
+                                   autocomplete="off">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" data-dismiss="modal">取消
+                </button>
+                <button type="button" class="btn-inter" onclick="$('#changePasswordForm').submit();">
+                    保存
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script>
+    $('#userAlias').text($.cookie('userAlias'));
+</script>
+<!--<SCRIPT type="text/javascript" src="../scripts/ca/XTXSAB.js" charset="UTF-8"></SCRIPT>-->
+<!--<SCRIPT LANGUAGE=JAVASCRIPT>-->
+<!--var containerName = $.cookie('containerName');-->
+<!--SetAutoLogoutParameter(containerName, logout);-->
+<!--</SCRIPT>-->
+</body>
+</html>

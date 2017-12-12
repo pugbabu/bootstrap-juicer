@@ -1,0 +1,19 @@
+jQuery 抽離功能分解產生的 Library - jquip
+
+jquip 就是因此而誕生的程式, 只需要部分 jQuery 的功能的話, 就可以直接取用此 Library.
+
+詳見: mythz/jquip - GitHub
+下述摘錄自此篇:
+
+jquip v0.2
+
+jquip.js (5.7k) - core jquip.js
+jquip.events.js (1k)
+jquip.docready.js (.5k)
+jquip.css.js (1.6k)
+jquip.ajax.js (.9k)
+Query Engine
+
+jquip.q-min.js (.6k) - An extremely fast but limited query engine (see below)
+jquip.q-qwery.js (2.6k) - A New fast replacement for Sizzle.js
+jquip.q-sizzle.js (5.29k) - Sizzle.js

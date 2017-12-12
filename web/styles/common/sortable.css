@@ -1,0 +1,42 @@
+#sortable1,#sortable2,#sortable3,.sortable {
+	list-style-type: none;
+	float: left;
+	margin: 10px;
+	background: #eee;
+	padding: 2px;
+	width: 200px;
+	min-height: 34px;
+	max-height: 300px;
+	overflow: auto;
+}
+
+#sortable1 li,#sortable2 li,#sortable3 li,.sortable li {
+	margin: 3px;
+	padding: 3px;
+	font-size: 1.2em;
+	width: 150px;
+}
+
+.ui-state-highlight,.ui-widget-content .ui-state-highlight,.ui-widget-header .ui-state-highlight
+	{
+	background: url("../../images/sortable/ui-bg_glass_55_fbf9ee_1x400.png") repeat-x
+		scroll 50% 50% #FBF9EE;
+	border: 1px solid #c09853;
+	color: #363636;
+}
+
+.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default
+	{
+	background: url("../../images/sortable/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x
+		scroll 50% 50% #E6E6E6;
+	border: 1px solid #D3D3D3;
+	color: #555555;
+	font-weight: normal;
+}
+
+div.demo {
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana",
+		"sans-serif";
+	padding: 30px 0px 0px 160px;
+	height: 350px;
+}

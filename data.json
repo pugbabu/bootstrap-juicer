@@ -1,0 +1,69 @@
+[
+    {
+        "purviewImg": "fam-14",
+        "purviewName": "Echart图表Demo",
+        "purviewOrder": 2,
+        "purviewType": "MODULE",
+        "isMenu": true,
+        "parentId": "-1",
+        "purviewId": "ff808081591a6f0501591a7105880001",
+        "children": [
+            {
+                "purviewName": "停车场管理",
+                "purviewOrder": 0,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "park/parking/parkList.htm",
+                "parentId": "ff808081591a6f0501591a710581",
+                "purviewId": "ff808081591a6f0501591a71998103"
+            },
+            {
+                "purviewName": "路段信息管理",
+                "purviewOrder": 1,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "park/berthGroup/berthGroupList.htm",
+                "parentId": "ff808081591a6f0501591a7105880001",
+                "purviewId": "ff8080815926341401592635dac60001"
+            },
+            {
+                "purviewName": "泊位管理",
+                "purviewOrder": 2,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "park/berth/berthList.htm",
+                "parentId": "ff808081591a6f0501591a7105880001",
+                "purviewId": "ff808081591f447501591f4648af0000"
+            }
+        ]
+    },
+    {
+        "purviewImg": "fam-10",
+        "purviewName": "Vue2.0项目",
+        "purviewOrder": 1,
+        "purviewType": "MODULE",
+        "isMenu": true,
+        "parentId": "-1",
+        "purviewId": "ff808081591a6f0501591a7105880001",
+        "children": [
+            {
+                "purviewName": "音乐H5 WebApp",
+                "purviewOrder": 1,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "Vue/musicApp.htm",
+                "parentId": "ff808081591a6f0501591a710588410001",
+                "purviewId": "ff808081591a6f0501591a719981210002"
+            },
+            {
+                "purviewName": "高仿饿了么",
+                "purviewOrder": 1,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "Vue/vueSell.htm",
+                "parentId": "ff808081591a6f05015391a7105880001",
+                "purviewId": "ff8080815912a6f0501591a7199810002"
+            }
+        ]
+    }
+]
