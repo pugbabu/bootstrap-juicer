@@ -39,4 +39,3 @@
         };
     a.screenfull = e.init()
 })(window, document)
-$('#fullScren').click(screenfull && screenfull.request())

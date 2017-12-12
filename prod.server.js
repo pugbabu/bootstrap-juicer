@@ -9,7 +9,7 @@ var router = express.Router();
 
 router.get('/', function (req, res, next) {
 	console.log('进来了')
-	req.url = './web/pages/frame.htm';
+	req.url = './index.html';
 	next();
 });
 
@@ -28,7 +28,7 @@ apiRoutes.get('/title', function (req, res) {
 
 app.use('/api', apiRoutes);
 
-app.use(express.static('./dist'));
+app.use(express.static('./web'));
 
 module.exports = app.listen(port, function (err) {
 	console.log('title')
