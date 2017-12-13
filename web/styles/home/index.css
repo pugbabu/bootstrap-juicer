@@ -1,0 +1,9 @@
+html,body{
+    background: #031F2D;
+}
+#dd{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #fff;
+}

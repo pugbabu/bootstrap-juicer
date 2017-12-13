@@ -67,5 +67,25 @@
                 "purviewId": "ff8080281591a6f0501591a719981210002"
             }
         ]
+    },
+    {
+        "purviewImg": "fam-10",
+        "purviewName": "H5",
+        "purviewOrder": 1,
+        "purviewType": "MODULE",
+        "isMenu": true,
+        "parentId": "-1",
+        "purviewId": "ff808081591a6f0501591a7105880001",
+        "children": [
+            {
+                "purviewName": "图片查看器",
+                "purviewOrder": 1,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "app/sorket.htm",
+                "parentId": "ff8018q081591a6f0501591a710588410001",
+                "purviewId": "ff8080281a591a6f0501591a719981210002"
+            }
+        ]
     }
 ]
