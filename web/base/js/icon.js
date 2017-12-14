@@ -13,16 +13,37 @@ var dataNum = [
     '<div class="line-d"><span class="icon-digit"></span></div>'
 ];
 window.onload=function(){
-    var one = 1234567,two = 12.321
-    setNum(one)
+    setInterval(function(){setNum((Math.random()*12000).toFixed(0),'num',false)},2000)
+    setInterval(function(){setNum((Math.random()*12000).toFixed(2),'totalMoney')},2000)
 }
-function setNum(item) {
-    console.log(item.toString().length)
+function setNum(item,id, digit=true) {
     item = item.toString()
     var htm = ''
-    for(var i=0;i<item.length;i++){
-        htm += dataNum[item[i]]
+    if(digit){                                 //又显示分号 又显示点
+        items = item.split('.')
+        for(var i=0;i<items[0].length;i++){
+            if((items[0].length===4)&&(i===1)){htm += dataNum[11]}
+            if((items[0].length===5)&&(i===2)){htm += dataNum[11]}
+            if((items[0].length===6)&&(i===3)){htm += dataNum[11]}
+            if((items[0].length===7)&&((i===1)||(i===4))){htm += dataNum[11]}
+            if((items[0].length===8)&&((i===2)||(i===5))){htm += dataNum[11]}
+            htm += dataNum[items[0][i]]
+        }
+        if(items.length>1){
+            for(var i=0;i<items[1].length;i++){
+                if(i===0){htm += dataNum[10]}
+                htm += dataNum[items[1][i]]
+            }
+        }
+    }else{
+        for(var i=0;i<item.length;i++){         // 不显示 分号的点
+            if(item[i] === '.'){
+                htm += dataNum[10]
+            }else{
+                htm += dataNum[item[i]]
+            }
+        }
     }
-    document.getElementById('num').innerHTML = htm
+    document.getElementById(id).innerHTML = htm
 }
 

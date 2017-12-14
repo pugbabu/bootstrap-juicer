@@ -2,7 +2,7 @@
     position:relative;
     top:50px;
     left: 50px;
-    width:300px;
+    width:400px;
     height: 300px;
     border:2px solid #001AAD;
     box-shadow: inset 0px 0px 55px #001AAD;
@@ -51,6 +51,7 @@
     height: 45px;
     line-height: 45px;
     color: yellow;
+    margin:0 2px;
     font-size: 30px;
     text-align :center;
     background: linear-gradient(#414356, #1F1C27);
