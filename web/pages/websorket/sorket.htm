@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>聊天室</title>
+    <link rel="shortcut icon" href="../../../logo_icon.png"/>
+    <link rel="stylesheet" href="../../styles/bootstrap/bootstrap.css">
+    <script src="../../scripts/lib/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/common/jquery.cookie.min.js"></script>
+    <style>
+        .center{
+            width: 320px;
+            height: 568px;
+            display: inline-block;
+            /*position: absolute;*/
+            /*top:50%;*/
+            /*left: 50%;*/
+            /*transform: translateX(-50%) translateY(-50%);*/
+        }
+        .posit{
+            position: absolute;
+            top:100px;
+            left: 100px;
+        }
+    </style>
 </head>
 <body>
-
+<button class="btn-inter posit">点击生成二维码</button>
+<div id="modal"></div>
+<div style="text-align: center">
+    <div class="center">
+        <iframe src="http://116.62.168.126:81/#/" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    <div class="center">
+        <iframe src="http://116.62.168.126:81/#/" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+</div>
+<script>
+    $('.posit').click(function(){
+        $('#modal').load('../QRcode/index.htm')
+        $.cookie('url', 'http://116.62.168.126:81/#/');
+    })
+</script>
 </body>
 </html>
