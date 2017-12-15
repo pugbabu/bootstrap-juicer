@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>照片查看器</title>
+
+    <script src="../../scripts/lib/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/lib/pinchzoom.js"></script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .imgContent{
+            width: 100%;
+        }
+        .imgWrapper{
+            width: 49%;
+            height: 90px;
+            display: inline-block;
+        }
+        .imgWrapper img{
+            width: 100%;
+        }
+        .lookImg{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="imgContent">
+    <div class="imgWrapper">
+        <img src="../../images/xian.jpg">
+    </div>
+    <div class="imgWrapper">
+        <img src="../../images/xian-icon.jpg">
+    </div>
+    <div class="imgWrapper">
+        <img src="../../images/X-icon.jpg">
+    </div>
+</div>
+<div class="lookImg" style="display: none">
+</div>
+<script>
+    $('.lookImg').click(function(){
+        $('.lookImg').fadeOut();
+    });
+    $('.imgWrapper').click(function() {
+        var width = $(this).find('img').width(),height = $(this).find('img').height();
+        var src = $(this).find('img').attr('src')
+        if(width > height){
+            fullLookPhoto(src,true)
+        }else{
+            fullLookPhoto(src,false)
+        }
+    })
+    function fullLookPhoto(src, trans){
+        var Src = src;
+        var htm = ' <div class="pinch-zoom-container bigImg" style="">'+
+            '<div class="pinch-zoom" style="transform-origin: 0% 0% 0px; position: absolute; transform: scale(1, 1) translate(0px, 0px);">'+
+            '<img class="fixBig" id="showImg" src='+Src+'>'+
+            '</div>'+
+            '</div>';
+        $('.lookImg').html(htm);
+        new RTP.PinchZoom($('div.pinch-zoom'), {
+            maxZoom: 3 //最大放大倍数 /3
+            // minZoom:1
+        });
+
+
+        var aw = $(window).width();
+        var ah = $(window).height();
+
+        if(!trans){
+            $(".pinch-zoom").css("width", aw + "px").css("height", ah + "px");
+            $(".pinch-zoom img").css("width", aw + "px").css("height", ah + "px");
+            $('#showImg').css('transform-origin',' right top').css('transform','rotate(-90deg) translateX(-2px) translateY('+'-'+aw+'px'+') ');
+        }else{
+            $(".pinch-zoom").css("width", aw + "px").css("height", ah + "px");
+            $(".pinch-zoom img").css("width", ah + "px").css("height", aw + "px");
+        }
+        $('.lookImg').fadeIn();
+    }
+</script>
+</body>
+</html>
