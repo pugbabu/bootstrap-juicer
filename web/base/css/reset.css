@@ -21,6 +21,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
     line-height: 1;
 }
+div,p{
+    box-sizing: border-box;
+}
 ol, ul {
     list-style: none;
 }

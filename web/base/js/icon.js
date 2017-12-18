@@ -47,3 +47,23 @@ function setNum(item,id, digit=true) {
     document.getElementById(id).innerHTML = htm
 }
 
+
+
+function getDate(){
+    var myDate = new Date();
+    var year = myDate.getFullYear();
+    var month = myDate.getMonth() + 1;
+    var date = myDate.getDate();
+    var h = myDate.getHours();
+    var m = myDate.getMinutes();
+    var s = myDate.getSeconds();
+    var now = year + '-' + conver(month) + "-" + conver(date) + " " + conver(h) + ':' + conver(m) + ":" + conver(s);
+    return now
+}
+function conver(s) {
+    return s < 10 ? '0' + s : s;
+}
+setInterval(function(){
+    document.querySelector('.noeTime').innerHTML = getDate()
+    // $('.noeTime').html(getDate())
+},1000)
