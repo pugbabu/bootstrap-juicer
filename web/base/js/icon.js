@@ -12,10 +12,11 @@ var dataNum = [
     '<div class="line-d"><span class="icon-d"></span></div>',
     '<div class="line-d"><span class="icon-digit"></span></div>'
 ];
-window.onload=function(){
+
+$(function(){
     setInterval(function(){setNum((Math.random()*12000).toFixed(0),'num',false)},2000)
     setInterval(function(){setNum((Math.random()*12000).toFixed(2),'totalMoney')},2000)
-}
+})
 function setNum(item,id, digit=true) {
     item = item.toString()
     var htm = ''

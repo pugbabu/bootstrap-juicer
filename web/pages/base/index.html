@@ -6,15 +6,10 @@
     <link rel="stylesheet" href="../../base/css/reset.css">
     <link rel="stylesheet" href="../../base/css/style.css">
     <link rel="stylesheet" href="../../base/css/index.css">
+    <script src="../../scripts/lib/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/common/echarts/echarts-3.0.min.js"></script>
     <script src="../../base/js/icon.js"></script>
-    <style>
-        html,body{
-            background: #031F2D;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }
-    </style>
+    <script src="../../scripts/base/bigScren.js"></script>
 </head>
 <body>
 <div class="content">
@@ -31,123 +26,76 @@
     </div>
 </div>
     <div class="leftTab">
-    <div class="iconContent bgColor">
-        <span class="deg lt"><i></i></span>
-        <span class="deg rt"><i></i></span>
-        <span class="deg lb"><i></i></span>
-        <span class="deg rb"><i></i></span>
-        <div class="totalCar">
-            <div class="titleTal">
-                <p>服务车辆总次数</p>
-            </div>
-            <div class="carNum" id="num">
-                <div class="line">
-                    <span class="icon-0"></span>
-                </div>
-                <div class="line">
-                    <span class="icon-0"></span>
-                </div>
-            </div>
-            <div class="totalCar">
-                <div class="titleTal">
-                    <p>停车费用缴纳总金额(元)</p>
-                </div>
-                <div class="carNum"  id="totalMoney">
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                    <div class="line-d">
-                        <span class="icon-d"></span>
-                    </div>
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="iconContent bgColor">
-        <span class="deg lt"><i></i></span>
-        <span class="deg rt"><i></i></span>
-        <span class="deg lb"><i></i></span>
-        <span class="deg rb"><i></i></span>
-        <div class="totalCar">
-            <div class="titleTal">
-                <p>服务车辆总次数</p>
-            </div>
-            <div class="carNum" id="nums">
-                <div class="line">
-                    <span class="icon-0"></span>
-                </div>
-                <div class="line">
-                    <span class="icon-0"></span>
-                </div>
-            </div>
-            <div class="totalCar">
-                <div class="titleTal">
-                    <p>停车费用缴纳总金额(元)</p>
-                </div>
-                <div class="carNum"  id="totalMoneys">
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                    <div class="line-d">
-                        <span class="icon-d"></span>
-                    </div>
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="iconContent bgColor">
-        <span class="deg lt"><i></i></span>
-        <span class="deg rt"><i></i></span>
-        <span class="deg lb"><i></i></span>
-        <span class="deg rb"><i></i></span>
-        <div class="totalCar">
-            <div class="titleTal">
-                <p>服务车辆总次数</p>
-            </div>
-            <div class="carNum" id="nums">
-                <div class="line">
-                    <span class="icon-0"></span>
-                </div>
-                <div class="line">
-                    <span class="icon-0"></span>
-                </div>
-            </div>
-            <div class="totalCar">
-                <div class="titleTal">
-                    <p>停车费用缴纳总金额(元)</p>
-                </div>
-                <div class="carNum"  id="totalMoneys">
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                    <div class="line-d">
-                        <span class="icon-d"></span>
-                    </div>
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                    <div class="line">
-                        <span class="icon-0"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <div class="rightTab">
         <div class="iconContent bgColor">
+            <span class="deg lt"><i></i></span>
+            <span class="deg rt"><i></i></span>
+            <span class="deg lb"><i></i></span>
+            <span class="deg rb"><i></i></span>
+            <div class="totalCar">
+                <div class="titleTal">
+                    <p>服务车辆总次数</p>
+                </div>
+                <div class="carNum" id="num">
+                    <div class="line">
+                        <span class="icon-0"></span>
+                    </div>
+                    <div class="line">
+                        <span class="icon-0"></span>
+                    </div>
+                </div>
+                <div class="totalCar">
+                    <div class="titleTal">
+                        <p>停车费用缴纳总金额(元)</p>
+                    </div>
+                    <div class="carNum"  id="totalMoney">
+                        <div class="line">
+                            <span class="icon-0"></span>
+                        </div>
+                        <div class="line-d">
+                            <span class="icon-d"></span>
+                        </div>
+                        <div class="line">
+                            <span class="icon-0"></span>
+                        </div>
+                        <div class="line">
+                            <span class="icon-0"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="iconContent bgColor">  <!--实时利用率-->
+            <span class="deg lt"><i></i></span>
+            <span class="deg rt"><i></i></span>
+            <span class="deg lb"><i></i></span>
+            <span class="deg rb"><i></i></span>
+            <div class="totalCar" id="bar">
+
+            </div>
+        </div>
+        <div class="iconContent bgColor">  <!--区域交易完成数量显示-->
+            <span class="deg lt"><i></i></span>
+            <span class="deg rt"><i></i></span>
+            <span class="deg lb"><i></i></span>
+            <span class="deg rb"><i></i></span>
+            <div class="totalCar">
+                <table>
+                    <tr>
+                        <td>12</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>32</td>
+                        <td>12</td>
+                        <td>12</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="rightTab">
+        <div class="rightContent bgColor">
             <span class="deg lt"><i></i></span>
             <span class="deg rt"><i></i></span>
             <span class="deg lb"><i></i></span>
@@ -185,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="iconContent bgColor">
+        <div class="rightContent bgColor">
             <span class="deg lt"><i></i></span>
             <span class="deg rt"><i></i></span>
             <span class="deg lb"><i></i></span>
@@ -263,6 +211,9 @@
                 </div>
             </div>
         </div>
+
+    </div>
+    <div class="map" id="map">
 
     </div>
 </div>
