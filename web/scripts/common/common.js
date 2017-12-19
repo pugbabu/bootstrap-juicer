@@ -62,7 +62,7 @@
             params.random = random;
         }
         return $.ajax({
-            url: "http://127.0.0.1" + url,
+            url: "http://116.62.168.126" + url,
             data: (params && JSON.stringify(params)),
             processData: false,
             type: "POST",
@@ -101,7 +101,7 @@
             params.random = random;
         }
         return $.ajax({
-            url: 'http://127.0.0.1' + url,
+            url: 'http://116.62.168.126' + url,
             data: params,
             type: "GET",
             success: function (data) {

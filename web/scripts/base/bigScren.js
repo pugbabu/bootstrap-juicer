@@ -163,7 +163,178 @@ function getJson(){
         chart.setOption({
             series: [{
                 type: 'map',
-                map: 'beijing'
+                map: 'beijing',
+                itemStyle: {
+                    normal: {
+                        areaColor: '#0c3b80',
+                        borderColor: '#2d85ff',
+                        borderType: 'dashed',
+                        borderWidth: 1.3
+                    }
+                },
+                regions: [
+                    {
+                        name: '通州区',
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: function (params) {
+                                    return ['{a| }', '{cc|' + params.name + '}'].join('\n');
+                                },
+                                rich: {
+                                    cc: {
+                                        color: '#FFFFFF',
+                                    },
+                                    a: {
+                                        backgroundColor: {
+                                            image: '../../images/screenShow/tongzhou@2x.png'
+                                        },
+                                        width: 20,
+                                        height: 20
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        name: '朝阳区',
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: function (params) {
+                                    return ['{a| }', '{cc|' + params.name + '}'].join('\n');
+                                },
+                                rich: {
+                                    cc: {
+                                        color: '#FFFFFF'
+                                    },
+                                    a: {
+                                        backgroundColor: {
+                                            image: '../../images/screenShow/chaoyang@2x.png'
+                                        },
+                                        width: 20,
+                                        height: 20
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        name: '海淀区',
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: function (params) {
+                                    return ['{a| }', '{cc|' + params.name + '}'].join('\n');
+                                },
+                                rich: {
+                                    cc: {
+                                        color: '#FFFFFF'
+                                    },
+                                    a: {
+                                        backgroundColor: {
+                                            image: '../../images/screenShow/haidian@2x.png'
+                                        },
+                                        width: 20,
+                                        height: 20
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        name: '丰台区',
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: function (params) {
+                                    return ['{a| }', '{cc|' + params.name + '}'].join('\n');
+                                },
+                                rich: {
+                                    cc: {
+                                        color: '#FFFFFF',
+                                    },
+                                    a: {
+                                        backgroundColor: {
+                                            image: '../../images/screenShow/fengtai@2x.png'
+                                        },
+                                        width: 20,
+                                        height: 20
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        name: '石景山区',
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: function (params) {
+                                    return ['{a| }', '{cc|' + params.name + '}'].join('\n');
+                                },
+                                rich: {
+                                    cc: {
+                                        color: '#FFFFFF',
+                                    },
+                                    a: {
+                                        backgroundColor: {
+                                            image: '../../images/screenShow/shijingshan@2x.png'
+                                        },
+                                        width: 20,
+                                        height: 20
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        name: '西城区',
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: function (params) {
+                                    return ['{a| }', '{cc|' + params.name + '}'].join('\n');
+                                },
+                                rich: {
+                                    cc: {
+                                        color: '#FFFFFF'
+                                    },
+                                    a: {
+                                        backgroundColor: {
+                                            image: '../../images/screenShow/xicheng@2x.png'
+                                        },
+                                        width: 20,
+                                        height: 40
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        name: '东城区',
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: function (params) {
+                                    return ['{a| }', '{cc|' + params.name + '}'].join('\n');
+                                },
+                                rich: {
+                                    cc: {
+                                        color: '#FFFFFF'
+                                    },
+                                    a: {
+                                        backgroundColor: {
+                                            image: '../../images/screenShow/dongcheng@2x.png'
+                                        },
+                                        width: 18,
+                                        height: 18
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
             }]
         });
     })
