@@ -48,8 +48,6 @@ function setNum(item,id, digit=true) {
     document.getElementById(id).innerHTML = htm
 }
 
-
-
 function getDate(){
     var myDate = new Date();
     var year = myDate.getFullYear();
@@ -66,5 +64,4 @@ function conver(s) {
 }
 setInterval(function(){
     document.querySelector('.noeTime').innerHTML = getDate()
-    // $('.noeTime').html(getDate())
 },1000)

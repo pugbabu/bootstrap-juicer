@@ -13,6 +13,27 @@ html,body{
     height: 100%;
     width: 100%;
 }
+.tableDiv{
+    width: 90%;
+    height: 87%;
+    margin: 2% auto;
+    content: '';
+}
+.divTable tr{
+    color: #fff;
+    border:none;
+}
+.tableDiv table.divTable th{
+    text-align: left;
+    font-size: 15px;
+    border:none;
+}
+.tableDiv table.divTable td{
+ text-align: right;
+    border:none;
+    font-size: 15px;
+    color: #02CFD7;
+}
 .leftTab{
     position: absolute;
     left: 1%;
@@ -131,14 +152,14 @@ html,body{
 }
 .titleTal p{
     font-size: 19px;
-    margin: 6% 0;
+    margin: 4% 0;
 }
 .titleTal{
     color: #ddd;
     font-weight :700;
     font-size: 21px;
     text-align: center;
-    margin-top: 11px;
+
 }
 .carNum{
     text-align: center;
