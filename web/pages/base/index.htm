@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>字体</title>
+    <title>大屏展示</title>
     <link rel="stylesheet" href="../../base/css/reset.css">
+    <link rel="stylesheet" href="../../styles/home/style.css">
     <link rel="stylesheet" href="../../styles/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../base/css/style.css">
     <link rel="stylesheet" href="../../base/css/index.css">
@@ -11,14 +12,24 @@
     <script src="../../scripts/common/jquery.cookie.min.js"></script>
     <script src="../../scripts/common/echarts/echarts-3.0.min.js"></script>
     <script src="../../scripts/lib/juicer-min.js"></script>
+    <script src="../../scripts/fullScren/fullScren.js"></script>
     <script src="../../scripts/common/properties.js"></script>
     <script src="../../scripts/common/common.js"></script>
-
     <script src="../../base/js/icon.js"></script>
     <script src="../../scripts/base/bigScren.js"></script>
+    <style>
+        #dd{
+            position: fixed;
+            right: 5px;
+            top: 5px;
+            color: #fff;
+            z-index: 100;
+        }
+    </style>
 </head>
 <body>
 <div class="content">
+    <span class="icon-enlarge" id="dd"></span>
     <div class="headTitle">
     <div class="title-text bgColor">
         <span class="deg lt"><i></i></span>
@@ -253,5 +264,11 @@
     </div>
     <div class="modalMap"></div>
 </div>
+<script type="text/javascript">
+    function ck() {
+        screenfull && screenfull.request();
+    };
+    dd.onclick = ck
+</script>
 </body>
 </html>

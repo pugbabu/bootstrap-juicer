@@ -12,7 +12,6 @@ var appData = require('./data.json');
 
 router.get('/', function (req, res, next) {
     console.log('进来了')
-    // req.url = './pages/login.htm';
     next();
 });
 

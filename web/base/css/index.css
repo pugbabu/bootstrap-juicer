@@ -19,9 +19,13 @@ html,body{
     margin: 2% auto;
     content: '';
 }
+.divTable{
+    height: 100%;
+}
 .divTable tr{
     color: #fff;
     border:none;
+
 }
 .tableDiv table.divTable th{
     text-align: left;
