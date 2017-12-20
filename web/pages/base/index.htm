@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="../../base/css/style.css">
     <link rel="stylesheet" href="../../base/css/index.css">
     <script src="../../scripts/lib/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/common/jquery.cookie.min.js"></script>
     <script src="../../scripts/common/echarts/echarts-3.0.min.js"></script>
+    <script src="../../scripts/lib/juicer-min.js"></script>
+    <script src="../../scripts/common/properties.js"></script>
+    <script src="../../scripts/common/common.js"></script>
+
     <script src="../../base/js/icon.js"></script>
     <script src="../../scripts/base/bigScren.js"></script>
 </head>
@@ -84,32 +89,31 @@
                     <thead>
                         <tr>
                             <th colspan="3" style="font-size: 18px;">当日累计服务次数</th>
-                            <td>120</td>
+                            <td>0</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>朝阳</th>
-                            <td>132</td>
+                            <th>东城</th>
+                            <td>0</td>
                             <th>海淀</th>
-                            <td>120</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>西城</th>
+                            <td>0</td>
+                            <th>通州</th>
+                            <td>0</td>
                         </tr>
                         <tr>
                             <th>朝阳</th>
-                            <td>132</td>
-                            <th>海淀</th>
-                            <td>120</td>
+                            <td>0</td>
+                            <th>石景山</th>
+                            <td>0</td>
                         </tr>
                         <tr>
-                            <th>朝阳</th>
-                            <td>132</td>
-                            <th>海淀</th>
-                            <td>120</td>
-                        </tr>
-                        <tr>
-                            <th>朝阳</th>
-                            <td>132</td>
-
+                            <th>丰台</th>
+                            <td>0</td>
                         </tr>
                     </tbody>
                 </table>
@@ -122,35 +126,72 @@
             <span class="deg rt"><i></i></span>
             <span class="deg lb"><i></i></span>
             <span class="deg rb"><i></i></span>
-            <div class="totalCar">
-                <div class="titleTal">
-                    <p>服务车辆总次数</p>
-                </div>
-                <div class="carNum" id="nums">
-                    <div class="line">
-                        <span class="icon-0"></span>
+            <div class="tableDiv">
+                <h2 class="nowList">当天实时缴费排行</h2>
+                <div>
+                    <div class='loadWrapper bj'>
+                        <span class='loadTitle'>北京</span>
+                        <div class="centLoad">
+                            <div class="loadWidth "></div>
+                        </div>
+                        <span class='precentLoad'>50%</span>
+
                     </div>
-                    <div class="line">
-                        <span class="icon-0"></span>
+                    <div class='loadWrapper  cy'>
+                        <span class='loadTitle'>朝阳</span>
+                        <div class="centLoad">
+                            <div class="loadWidth"></div>
+                        </div>
+                        <span class='precentLoad'>50%</span>
+
                     </div>
-                </div>
-                <div class="totalCar">
-                    <div class="titleTal">
-                        <p>停车费用缴纳总金额(元)</p>
+                    <div class='loadWrapper hd'>
+                        <span class='loadTitle'>海淀</span>
+                        <div class="centLoad ">
+                            <div class="loadWidth"></div>
+                        </div>
+                        <span class='precentLoad'>50%</span>
                     </div>
-                    <div class="carNum"  id="totalMoneys">
-                        <div class="line">
-                            <span class="icon-0"></span>
+                    <div class='loadWrapper ft'>
+                        <span class='loadTitle'>丰台</span>
+                        <div class="centLoad">
+                            <div class="loadWidth"></div>
                         </div>
-                        <div class="line-d">
-                            <span class="icon-d"></span>
+                        <span class='precentLoad'>50%</span>
+                    </div>
+                    <div class='loadWrapper sjs'>
+                        <span class='loadTitle'>石景山</span>
+                        <div class="centLoad">
+                            <div class="loadWidth"></div>
                         </div>
-                        <div class="line">
-                            <span class="icon-0"></span>
+                        <span class='precentLoad'>50%</span>
+                    </div>
+                    <div class='loadWrapper tz'>
+                        <span class='loadTitle'>通州</span>
+                        <div class="centLoad">
+                            <div class="loadWidth"></div>
                         </div>
-                        <div class="line">
-                            <span class="icon-0"></span>
+                        <span class='precentLoad'>50%</span>
+                    </div>
+                    <div class='loadWrapper xc'>
+                        <span class='loadTitle'>西城</span>
+                        <div class="centLoad">
+                            <div class="loadWidth"></div>
                         </div>
+                        <span class='precentLoad'>50%</span>
+                    </div>
+                    <div class='loadWrapper dc'>
+                        <span class='loadTitle'>东城</span>
+                        <div class="centLoad">
+                            <div class="loadWidth"></div>
+                        </div>
+                        <span class='precentLoad'>50%</span>
+                    </div>
+                    <div>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -176,33 +217,32 @@
                     <thead>
                     <tr>
                         <th colspan="3" style="font-size: 17px;">当日各地区缴费金额(元)</th>
-                        <td>120</td>
+                        <td>0</td>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th>朝阳</th>
-                        <td>132</td>
-                        <th>海淀</th>
-                        <td>120</td>
-                    </tr>
-                    <tr>
-                        <th>朝阳</th>
-                        <td>132</td>
-                        <th>海淀</th>
-                        <td>120</td>
-                    </tr>
-                    <tr>
-                        <th>朝阳</th>
-                        <td>132</td>
-                        <th>海淀</th>
-                        <td>120</td>
-                    </tr>
-                    <tr>
-                        <th>朝阳</th>
-                        <td>132</td>
-
-                    </tr>
+                        <tr>
+                            <th>东城</th>
+                            <td>0</td>
+                            <th>海淀</th>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>西城</th>
+                            <td>0</td>
+                            <th>通州</th>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>朝阳</th>
+                            <td>0</td>
+                            <th>石景山</th>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>丰台</th>
+                            <td>0</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -210,8 +250,8 @@
 
     </div>
     <div class="map" id="map">
-
     </div>
+    <div class="modalMap"></div>
 </div>
 </body>
 </html>

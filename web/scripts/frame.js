@@ -375,7 +375,7 @@
     }
 
     function openDefaultTab() {
-        openTab(openLinkInNewTab("", "home/index.htm", "首页"));
+        openTab(openLinkInNewTab("", "base/index.htm", "首页"));
         var urlParams = $.location.search;
         var callbackUrl = urlParams.callbackUrl;
         if (callbackUrl) {
@@ -489,7 +489,7 @@
     $(function () {
 
         $("#goHome").on("click", function () {
-            openLinkInCurTab("", "home/index.htm", "首页");
+            openLinkInCurTab("", "base/index.htm", "首页");
         });
 
         $("#userInfo").on("click", function () {

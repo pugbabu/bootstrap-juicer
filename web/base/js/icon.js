@@ -49,14 +49,14 @@ function setNum(item,id, digit=true) {
 }
 
 function getDate(){
-    var myDate = new Date();
-    var year = myDate.getFullYear();
-    var month = myDate.getMonth() + 1;
-    var date = myDate.getDate();
-    var h = myDate.getHours();
-    var m = myDate.getMinutes();
-    var s = myDate.getSeconds();
-    var now = year + '-' + conver(month) + "-" + conver(date) + " " + conver(h) + ':' + conver(m) + ":" + conver(s);
+    let myDate = new Date();
+    let year = myDate.getFullYear();
+    let month = myDate.getMonth() + 1;
+    let date = myDate.getDate();
+    let h = myDate.getHours();
+    let m = myDate.getMinutes();
+    let s = myDate.getSeconds();
+    let now = year + '-' + conver(month) + "-" + conver(date) + " " + conver(h) + ':' + conver(m) + ":" + conver(s);
     return now
 }
 function conver(s) {
