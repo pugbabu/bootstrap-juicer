@@ -22,8 +22,62 @@
     cursor: pointer;
 }
 #diploma{
+    position: relative;
     width: 547px;
     min-height: 398px;
     background: url('../images/b.png');
     background-size: 100%;
 }
+#diploma span{
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    position: absolute;
+    overflow: hidden;
+}
+/**图片信息定位**/
+.useName{
+    top: 136px;
+    width: 64px;
+    left: 56px;
+}
+.works{
+    top: 177px;
+    width: 112px;
+    left: 181px;
+}
+.bussiness{
+    top: 207px;
+    left: 146px;
+}
+.grade{
+    top: 205px;
+    left: 426px;
+}
+.yelar{
+    top: 274px;
+    left: 186px;
+}
+.month{
+    top: 274px;
+    left: 240px;
+}
+.data{
+    top: 274px;
+    left: 270px;
+}
+.avatar{
+    display: inline-block;
+    width: 81px;
+    height: 99px;
+    position: absolute;
+    top: 68px;
+    left: 394px;
+}
+.avatar img{
+    width: 100%;
+    height: 100%;
+}
+

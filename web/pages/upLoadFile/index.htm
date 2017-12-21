@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="../../styles/file.css">
     <script src="../../scripts/lib/jquery-2.2.2.min.js"></script>
     <script src="../../scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="../../scripts/bootstrap/plugin/bootstrap-datetimepicker.min.js"></script>
     <script src="../../scripts/lib/html2canvas.min.js"></script>
+    <script src="../../scripts/upLoadFile/index.js"></script>
 </head>
 <body>
 <div class="container">
@@ -18,8 +20,8 @@
         <ul class="nav nav-tabs" role="tablist">
             <li class="demoTabs active">
                 <a href="#meterManDetailForm" role="tab" data-toggle="tab" aria-expanded="false">生成图片</a></li>
-            <li class="demoTabs  " id="taggle">
-                <a href="#fundsAccountForm" role="tab" data-toggle="tab" aria-expanded="true">查看下载图片</a>
+            <li class="demoTabs  " id="taggle" style="display: none" >
+                <a href="#fundsAccountForm" id="lookPhont" role="tab" data-toggle="tab" aria-expanded="true">查看下载图片</a>
             </li>
         </ul>
     </div>
@@ -28,50 +30,70 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="applyName" class="col-md-12 control-label">姓名</label>
+                        <label for="userName" class="col-md-12 control-label">姓名</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="applyName" name="applyName" placeholder="姓名">
+                            <input type="text" class="form-control" id="userName" name="userName" placeholder="姓名">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="applyName" class="col-md-12 control-label">作品</label>
+                        <label for="works" class="col-md-12 control-label">作品</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="applyName" name="applyName" placeholder="申请人姓名">
+                            <input type="text" class="form-control" id="works" name="works" placeholder="作品">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="applyName" class="col-md-12 control-label">奖状等级</label>
+                        <label for="bussenissName" class="col-md-12 control-label">比赛名称</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="applyName" name="applyName" placeholder="申请人姓名">
+                            <input type="text" class="form-control" id="bussenissName" name="bussenissName" placeholder="申请人姓名">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="avatar" class="col-md-12 control-label">头像</label>
+                        <label for="grad" class="col-md-12 control-label">奖状等级</label>
                         <div class="col-sm-12">
-                            <div></div>
-                            <a class="a-upload">
-                                <input type="file" name="" id="avatar">头像上传
-                            </a>
-                         </div>
+                            <input type="text" class="form-control" id="grad" name="grad" placeholder="申请人姓名">
+                        </div>
                     </div>
+                    <div class="form-group">
+                        <label for="datetimepicker" class="col-md-12 control-label">获奖时间</label>
+                        <div class="col-sm-12">
+                            <input type="text" readonly class="form-control" id="datetimepicker" name="datetimepicker" placeholder="获奖时间">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label for="avatar" class="col-md-12 control-label">头像</label>-->
+                        <!--<div class="col-sm-12">-->
+                            <!--<div></div>-->
+                            <!--<a class="a-upload">-->
+                                <!--<input multiple type="file" name="" id="avatar">头像上传-->
+                            <!--</a>-->
+                         <!--</div>-->
+                    <!--</div>-->
                     <div class="row" style="text-align: right">
-                        <span class="btn-inter">生成</span>
+                        <span class="btn-inter" id="config">生成</span>
+
                     </div>
                 </div>
                 <div class="col-sm-6" style="min-height: 398px">
                     <div id="diploma">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <img class="avatar"/>
+                        <span class="useName"></span>
+                        <span class="works"></span>
+                        <span class="bussiness"></span>
+                        <span class="grade"></span>
+                        <span class="yelar"></span>
+                        <span class="month"></span>
+                        <span class="data"></span>
+                        <div class="avatar">
+                            <!--<img class="" src="../../images/avatar.png"/>-->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="tab-pane" id="fundsAccountForm">
-           <h2>123</h2>
+            <div id="view" style="width: 547px;height: 398px;margin: 0 auto;"></div>
+            <div class="row">
+                <span class="btn-inter" id="downLoad">下载</span>
+            </div>
         </div>
     </div>
 </div>
