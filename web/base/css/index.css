@@ -264,3 +264,7 @@ html,body{
     background: rgba(249,229,10,.8);
     transition:all 400ms;
 }
+/**数字容器**/
+.numberWrapper{
+    position: absolute;
+}

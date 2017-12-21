@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../styles/file.css">
+    <script src="../../scripts/lib/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="../../scripts/lib/html2canvas.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 style="text-align: left">本地生成图片上传</h3>
+        </div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="demoTabs active">
+                <a href="#meterManDetailForm" role="tab" data-toggle="tab" aria-expanded="false">生成图片</a></li>
+            <li class="demoTabs  " id="taggle">
+                <a href="#fundsAccountForm" role="tab" data-toggle="tab" aria-expanded="true">查看下载图片</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane active" id="meterManDetailForm">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="applyName" class="col-md-12 control-label">姓名</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="applyName" name="applyName" placeholder="姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="applyName" class="col-md-12 control-label">作品</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="applyName" name="applyName" placeholder="申请人姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="applyName" class="col-md-12 control-label">奖状等级</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="applyName" name="applyName" placeholder="申请人姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="avatar" class="col-md-12 control-label">头像</label>
+                        <div class="col-sm-12">
+                            <div></div>
+                            <a class="a-upload">
+                                <input type="file" name="" id="avatar">头像上传
+                            </a>
+                         </div>
+                    </div>
+                    <div class="row" style="text-align: right">
+                        <span class="btn-inter">生成</span>
+                    </div>
+                </div>
+                <div class="col-sm-6" style="min-height: 398px">
+                    <div id="diploma">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <img class="avatar"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="fundsAccountForm">
+           <h2>123</h2>
+        </div>
+    </div>
+</div>
+</body>
+</html>

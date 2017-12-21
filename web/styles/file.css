@@ -1,0 +1,29 @@
+.a-upload{
+    padding: 4px 10px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    background: #019241;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+}
+.a-upload input{
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+#diploma{
+    width: 547px;
+    min-height: 398px;
+    background: url('../images/b.png');
+    background-size: 100%;
+}
