@@ -1,5 +1,5 @@
 window.onload = function() {
-    var keyInput = {
+    let keyInput = {
         init: function(){
             this.userName()
             this.works()
@@ -35,16 +35,16 @@ window.onload = function() {
             })
         },
     }
-    keyInput.init();
+    keyInput.init(); // 初始化input事件
     $("#avatar").change(function (e) {   // 一寸照片上传
         if (e.target.files.length > 0) {
             var file = e.target.files[0];
             getPhotoSize(file)
         }
     });
-    $('#config').click(takeScreenshot)
-    $('#datetimepicker').datetimepicker({
-        format: 'yyyy-mm-dd',      /*此属性是显示顺序，还有显示顺序是mm-dd-yyyy*/
+    $('#config').click(takeScreenshot)  // 生成图片
+    $('#datetimepicker').datetimepicker({  // 时间选择
+        format: 'yyyy-mm-dd',
         startView: 2,
         minView: 2,
         autoclose: true
@@ -52,7 +52,7 @@ window.onload = function() {
 }
 
 //回显图片
-function setImg(num,file) {
+function setImg(file) {
     var img = new Image(), url = img.src = URL.createObjectURL(file);
     var $img = $(img);
     img.onload = function () {
@@ -91,10 +91,8 @@ function getPhotoSize(obj) {
 function getBase64Image() {
     var canvas = document.querySelector("#view canvas")
     var dataURL = canvas.toDataURL("image/png");
-    var triggerDownload = $("#tttt").attr("href", dataURL).attr("download", "order-1111111111.png");
-    triggerDownload[0].click();
-    // dataURL = dataURL.split(",")[1];
-    // return dataURL
+    dataURL = dataURL.split(",")[1];
+    return dataURL
 }
 
 function takeScreenshot() {  // 生成图片
@@ -110,3 +108,45 @@ function takeScreenshot() {  // 生成图片
     $('#lookPhont').trigger('click'); // 模拟点击跳转
     setTimeout(() => { console.log(getBase64Image())}, 300)
 }
+
+
+//http://blog.csdn.net/swshbon/article/details/51605945
+function Download(){
+    //cavas 保存图片到本地  js 实现
+    //------------------------------------------------------------------------
+    //1.确定图片的类型  获取到的图片格式 data:image/Png;base64,......
+    var type ='png';//你想要什么图片格式 就选什么吧
+    var d=document.querySelector('#view canvas');
+    var imgdata=d.toDataURL(type);
+    //2.0 将mime-type改为image/octet-stream,强制让浏览器下载
+    var fixtype=function(type){
+        type=type.toLocaleLowerCase().replace(/jpg/i,'jpeg');
+        var r=type.match(/png|jpeg|bmp|gif/)[0];
+        return 'image/'+r;
+    };
+    imgdata=imgdata.replace(fixtype(type),'image/octet-stream');
+    //3.0 将图片保存到本地
+    var savaFile=function(data,filename)
+    {
+        var save_link=document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+        save_link.href=data;
+        save_link.download=filename;
+        var event=document.createEvent('MouseEvents');
+        event.initMouseEvent('click',true,false,window,0,0,0,0,0,false,false,false,false,0,null);
+        save_link.dispatchEvent(event);
+    };
+    var filename=''+new Date().getDate()+'.'+type;
+    //注意咯 由于图片下载的比较少 就直接用当前几号做的图片名字
+    savaFile(imgdata,filename);
+};
+
+// function getBase64(img) {
+//     var canvas = document.createElement("canvas");
+//     canvas.width = img.width;
+//     canvas.height = img.height;
+//     var ctx = canvas.getContext("2d");
+//     ctx.drawImage(img, 0, 0, img.width, img.height);
+//     var dataURL = canvas.toDataURL("image/png");
+//     dataURL = dataURL.split(",")[1];
+//     return dataURL; // return dataURL.replace("data:image/png;base64,", "");
+// }

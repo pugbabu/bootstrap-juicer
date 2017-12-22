@@ -90,12 +90,12 @@
     },
     {
         "purviewImg": "fam-7",
-        "purviewName": "html保存图片",
+        "purviewName": "html保存图片base64上传",
         "purviewOrder": 1,
         "purviewType": "MODULE",
         "isMenu": true,
         "parentId": "-1",
-        "purviewId": "ff80s8081591a6f0501591a7105880001",
+        "purviewId": "ff80s80815910501591a7105880001",
         "children": [
             {
                 "purviewName": "图片查看器",
@@ -103,8 +103,8 @@
                 "purviewType": "FUNCTION",
                 "isMenu": true,
                 "purviewUrl": "upLoadFile/index.htm",
-                "parentId": "ff8018vq081591a6f0501591a710588410001",
-                "purviewId": "ff808v0281a591a6f0501591a719981210002"
+                "parentId": "ff8018vq08159501591a710588410001",
+                "purviewId": "ff808v0281a50501591a719981210002"
             }
         ]
     }
