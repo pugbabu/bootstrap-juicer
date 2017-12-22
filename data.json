@@ -90,7 +90,7 @@
     },
     {
         "purviewImg": "fam-7",
-        "purviewName": "html保存图片base64上传",
+        "purviewName": "html生成图片",
         "purviewOrder": 1,
         "purviewType": "MODULE",
         "isMenu": true,
@@ -98,7 +98,7 @@
         "purviewId": "ff80s80815910501591a7105880001",
         "children": [
             {
-                "purviewName": "图片查看器",
+                "purviewName": "html生成图片",
                 "purviewOrder": 1,
                 "purviewType": "FUNCTION",
                 "isMenu": true,

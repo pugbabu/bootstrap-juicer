@@ -50,33 +50,17 @@ window.onload = function() {
         autoclose: true
     });
 }
-
-//回显图片
+//base64回显图片
 function setImg(file) {
-    var img = new Image(), url = img.src = URL.createObjectURL(file);
-    var $img = $(img);
-    img.onload = function () {
-        URL.revokeObjectURL(url);
-        $('.avatar').empty().append($img);
+    var r = new FileReader()
+    r.readAsDataURL(file)
+    r.onload = function(e){
+        $('.avatar img').attr('src', e.target.result)
     }
 }
-
-function getPhotoSize(obj) {
-    var photoExt = obj.type;
-    if ((photoExt != 'image/jpg') && (photoExt != 'image/png') && (photoExt != 'image/jpeg') && (photoExt != 'image/gif')) {
-        alert("请上传后缀名为jpg,png,jpeg的文件!");
-        return;
-    } else {
-        var fileSize = 0;
-        var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
-        if (isIE && !obj.files) {
-            var filePath = obj.value;
-            var fileSystem = new ActiveXObject("Scripting.FileSystemObject");
-            var file = fileSystem.GetFile(filePath);
-            fileSize = file.Size;
-        } else {
-            fileSize = obj.size;
-        }
+//
+function getPhotoSize(obj) { // 大小限制
+        fileSize = obj.size;
         fileSize = Math.round(fileSize / 1024 * 100) / 100; //单位为KB
         if (fileSize >= 1000) {
             alert("照片最大尺寸为1000KB，请重新上传!");
@@ -84,18 +68,17 @@ function getPhotoSize(obj) {
         } else {
             setImg(obj);
         }
-    }
 }
 
 // canvas转base64  https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL
-function getBase64Image() {
+function getBase64Image() {  //canvas --- base64
     var canvas = document.querySelector("#view canvas")
     var dataURL = canvas.toDataURL("image/png");
     dataURL = dataURL.split(",")[1];
     return dataURL
 }
 
-function takeScreenshot() {  // 生成图片
+function takeScreenshot() {  // 将html生成canvas图片
     html2canvas(document.getElementById('diploma'), {
         onrendered: function(canvas) {
             console.log(canvas)
@@ -140,13 +123,4 @@ function Download(){
     savaFile(imgdata,filename);
 };
 
-// function getBase64(img) {
-//     var canvas = document.createElement("canvas");
-//     canvas.width = img.width;
-//     canvas.height = img.height;
-//     var ctx = canvas.getContext("2d");
-//     ctx.drawImage(img, 0, 0, img.width, img.height);
-//     var dataURL = canvas.toDataURL("image/png");
-//     dataURL = dataURL.split(",")[1];
-//     return dataURL; // return dataURL.replace("data:image/png;base64,", "");
-// }
+
