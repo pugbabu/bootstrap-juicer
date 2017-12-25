@@ -56,7 +56,19 @@ function setImg(file) {
     r.readAsDataURL(file)
     r.onload = function(e){
         $('.avatar img').attr('src', e.target.result)
+        setTimeout(() => {console.log(getBase64Images())},300)
     }
+}
+function getBase64Images() {
+    var img = document.getElementById('img')
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;  //头像宽度和高度写死
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    var dataURL = canvas.toDataURL("image/png",0.5);
+    dataURL = dataURL.split(",")[1];
+    return dataURL; // return dataURL.replace("data:image/png;base64,", "");
 }
 //
 function getPhotoSize(obj) { // 大小限制
