@@ -70,7 +70,7 @@
     },
     {
         "purviewImg": "fam-10",
-        "purviewName": "H5",
+        "purviewName": "H5(图片查看器)",
         "purviewOrder": 1,
         "purviewType": "MODULE",
         "isMenu": true,
@@ -107,5 +107,25 @@
                 "purviewId": "ff808v0281a50501591a719981210002"
             }
         ]
-    }
+    },
+    {
+        "purviewImg": "fam-3",
+        "purviewName": "动态监控",
+        "purviewOrder": 1,
+        "purviewType": "MODULE",
+        "isMenu": true,
+        "parentId": "-1",
+        "purviewId": "ff8s081591a6f0501591a7105880001",
+        "children": [
+            {
+                "purviewName": "高德Map",
+                "purviewOrder": 1,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "map/index.htm",
+                "parentId": "ff8c8q081591a6f0501591a710588410001",
+                "purviewId": "fsc80281a591a6f0501591a719981210002"
+            }
+        ]
+    },
 ]

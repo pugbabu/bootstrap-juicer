@@ -40,7 +40,7 @@ window.onload = function() {
         if (e.target.files.length > 0) {
             var file = e.target.files[0];
             getPhotoSize(file)
-        }
+        } 
     });
     $('#config').click(takeScreenshot)  // 生成图片
     $('#datetimepicker').datetimepicker({  // 时间选择
@@ -54,10 +54,11 @@ window.onload = function() {
 function setImg(file) {
     var r = new FileReader()
     r.readAsDataURL(file)
+
     r.onload = function(e){
         $('.avatar img').attr('src', e.target.result)
-        setTimeout(() => {console.log(getBase64Images())},300)
     }
+
 }
 function getBase64Images() {
     var img = document.getElementById('img')
@@ -70,7 +71,6 @@ function getBase64Images() {
     dataURL = dataURL.split(",")[1];
     return dataURL; // return dataURL.replace("data:image/png;base64,", "");
 }
-//
 function getPhotoSize(obj) { // 大小限制
         fileSize = obj.size;
         fileSize = Math.round(fileSize / 1024 * 100) / 100; //单位为KB

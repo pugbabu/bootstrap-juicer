@@ -1,11 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>地图</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>self动态监控</title>
+    <link rel="stylesheet" href="../../styles/map/index.css">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <link rel="stylesheet" href="http://123.57.153.223:8088/USOrder/web/styles/bootstrap/bootstrap.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=a58194981005afde662f5880362e9959"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <script type="text/javascript" src="../../scripts/lib/juicer-min.js"></script>
+    <script src="../../scripts/map/ajax.js"></script>
+
+    <script type="text/javascript" src="http://a.amap.com/jsapi_demos/static/resource/heatmapData.js"></script>
 </head>
 <body>
-<h1>高德地图</h1>
+<header class="head">
+    <div class="h-left">停车场总数：<span>99</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;泊位数：<span>200/1000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用率： <span>98%</span></div>
+    <!--<div class="h-right"><span class="changeMapModal checked" data-modal="operation">运营模式</span><span class="changeMapModal">设备模式</span></div>-->
+</header>
+<div id="container"></div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body" id="bod"><h2></h2></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/template" id="park0">
+    <div class="marker-route more"><span>${Uing}</span>/<span>${total}</span></div>
+</script>
+<script type="text/template" id="park1">
+    <div class="marker-route less"><span>${Uing}</span>/<span>${total}</span></div>
+</script>
+<script type="text/template" id="park2">
+    <div class="marker-route middle"><span>${Uing}</span>/<span>${total}</span></div>
+</script>
 
+<script src="../../scripts/map/index.js"></script>
 </body>
 </html>
