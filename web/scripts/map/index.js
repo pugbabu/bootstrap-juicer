@@ -141,9 +141,10 @@ function createMap(){
 var dataInterface = {
     init:function(callback){
         var params = {
-            // 请求参数
+            "a": 1,
+            "b": 2
         };
-        Ajax.post('../../../date.json','',function(data){
+        $.get('/date.json', function (data) {
             data = JSON.parse(data)
             if (data.result == 'success') {
                 callback(data);
