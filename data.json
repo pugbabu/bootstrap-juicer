@@ -127,5 +127,34 @@
                 "purviewId": "fsc80281a591a6f0501591a719981210002"
             }
         ]
+    },
+    {
+        "purviewImg": "fam-4",
+        "purviewName": "陀螺仪",
+        "purviewOrder": 1,
+        "purviewType": "MODULE",
+        "isMenu": true,
+        "parentId": "-1",
+        "purviewId": "ff8ss91a6f0501591a7105880001",
+        "children": [
+            {
+                "purviewName": "指南针",
+                "purviewOrder": 1,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "Device/index.htm",
+                "parentId": "ff8c8q081a1a6f0501591a710588410001",
+                "purviewId": "fsc80281a591a6s01591a719981210002"
+            },
+            {
+                "purviewName": "小黄人",
+                "purviewOrder": 1,
+                "purviewType": "FUNCTION",
+                "isMenu": true,
+                "purviewUrl": "Device/index.htm",
+                "parentId": "ff8c8da081a1a6f0501591a710588410001",
+                "purviewId": "fsc80281aas1a6s01591a719981210002"
+            }
+        ]
     }
 ]

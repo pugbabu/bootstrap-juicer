@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>指南针</title>
+    <link rel="stylesheet" href="../../styles/device/Nouth.css">
+    <script src="../../scripts/common/console.js"></script>
+</head>
+<body>
+<div class="w">
+    <div class="n" id="n"></div>
+    <span class="deg" id="deg">0</span>
+    <span id="dir">南</span>
+</div>
+<script>
+    new VConsole();
+    let n = document.getElementById('n')
+    let deg = document.getElementById('deg')
+    let dir = document.getElementById('dir')
+    let arr = ['南','西南','西','西北','北','东北','东','东南']
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', function (event) {
+            let {alpha, beta, gamma} = event;
+            n.style.transform = 'rotate(' + alpha + 'deg)';
+            ((alpha>=0)&&(alpha<=180))?  alpha = 180 - alpha:alpha = 180 + (360 - alpha);
+            deg.innerHTML = parseInt(alpha) + '°';
+            if((alpha>175)&&(alpha<185)){
+                dir.innerHTML = arr[0]
+            }else if((alpha>=185)&&(alpha<265)){
+                dir.innerHTML = arr[1]
+            }else if((alpha>=265)&&(alpha<275)){
+                dir.innerHTML = arr[2]
+            }else if((alpha>=275)&&(alpha<355)){
+                dir.innerHTML = arr[3]
+            }else if((alpha>=355)||(alpha<5)){
+                dir.innerHTML = arr[4]
+            }else if((alpha>=5)&&(alpha<85)){
+                dir.innerHTML = arr[5]
+            }else if((alpha>=85)&&(alpha<95)){
+                dir.innerHTML = arr[6]
+            }else if((alpha>=95)&&(alpha<175)){
+                dir.innerHTML = arr[7]
+            }
+        })
+    }
+</script>
+</body>
+</html>

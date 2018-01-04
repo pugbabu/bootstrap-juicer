@@ -140,12 +140,8 @@ function createMap(){
 
 var dataInterface = {
     init:function(callback){
-        var params = {
-            "a": 1,
-            "b": 2
-        };
         $.get('/date.json', function (data) {
-            data = JSON.parse(data)
+            // data = JSON.parse(data)
             if (data.result == 'success') {
                 callback(data);
             } else {
