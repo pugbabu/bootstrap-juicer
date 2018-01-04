@@ -1,0 +1,37 @@
+#box{
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+#face{
+    background-image: url('../../images/face.png');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+#eyeLeft{
+    background-image: url(../images/eye.png);
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 90px;
+    left: 100px;
+}
+#eyeRight{
+    background-image: url('../../images/eye.png');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 90px;
+    left: 190px;
+}
+#glass{
+    background-image: url('../../images/glass.png');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
